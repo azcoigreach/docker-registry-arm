@@ -1,4 +1,4 @@
-FROM scaleway/golang:armhf-latest
+FROM golang:1.8.3-jessie
 
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
