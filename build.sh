@@ -36,4 +36,4 @@ echo "Run docker build -t ${1}:${TARGET_TAG} ${BASEDIR}"
 docker build -t ${1}:${TARGET_TAG} ${BASEDIR}
 
 echo "Update image on docker HUB"
-docker push docker.io/${1}:${TARGET_TAG}
+docker push ${1}:${TARGET_TAG}

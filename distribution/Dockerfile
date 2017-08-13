@@ -3,7 +3,7 @@ FROM scaleway/golang:armhf-latest
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
 
-RUN apt-get update && apt-get install make git
+RUN apt-get update && apt-get install -y make git
 
 WORKDIR $DISTRIBUTION_DIR
 COPY . $DISTRIBUTION_DIR
