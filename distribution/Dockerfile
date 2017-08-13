@@ -3,7 +3,7 @@ FROM arm32v6/golang:alpine3.6
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
 
-RUN apt-get update && apt-get install -y make git
+RUN apk update && apk add make git
 
 WORKDIR $DISTRIBUTION_DIR
 COPY . $DISTRIBUTION_DIR
