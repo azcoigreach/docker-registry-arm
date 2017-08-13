@@ -1,4 +1,4 @@
-FROM golang:1.8.3-jessie
+FROM armhf/golang:1.8.1
 
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
