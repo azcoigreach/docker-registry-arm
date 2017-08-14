@@ -2,8 +2,9 @@
 
 FROM arm32v7/alpine:latest
 
-RUN set -ex \
-    && apk add --no-cache ca-certificates apache2-utils
+RUN apt-get update && \
+    apt-get install -y ca-certificates apache2-utils && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY ./registry/registry /bin/registry
 COPY ./registry/config-example.yml /etc/docker/registry/config.yml

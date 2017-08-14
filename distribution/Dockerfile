@@ -6,8 +6,8 @@ ENV DOCKER_BUILDTAGS include_oss include_gcs
 ARG GOOS=linux
 ARG GOARCH=arm
 
-RUN set -ex \
-    && apk add --no-cache make git
+RUN apt-get update && \
+    apt-get install make git -y
 
 WORKDIR $DISTRIBUTION_DIR
 COPY . $DISTRIBUTION_DIR
