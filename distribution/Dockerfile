@@ -12,11 +12,11 @@ RUN apt-get update && \
 WORKDIR $DISTRIBUTION_DIR
 COPY . $DISTRIBUTION_DIR
 
-COPY cmd/registry/config-dev.yml /etc/docker/registry/config.yml
+#COPY cmd/registry/config-dev.yml /etc/docker/registry/config.yml
 
 RUN make PREFIX=/go clean binaries
 
-VOLUME ["/var/lib/registry"]
-EXPOSE 5000
-ENTRYPOINT ["registry"]
-CMD ["serve", "/etc/docker/registry/config.yml"]
+#VOLUME ["/var/lib/registry"]
+#EXPOSE 5000
+#ENTRYPOINT ["registry"]
+#CMD ["serve", "/etc/docker/registry/config.yml"]
