@@ -24,16 +24,16 @@ fi
 
 BASEDIR="$(dirname $0)"
 
-echo "Run update.sh ${1}"
-sh ${BASEDIR}/update.sh $1
+echo "Run update.sh ${2}"
+sh ${BASEDIR}/update.sh $2
 
 if [ $? -ne 0 ]; then
   echo "Build failed"
   exit 1
 fi
 
-echo "Run docker build -t ${3}:${TARGET_TAG} ${BASEDIR}"
+echo "Run docker build -t ${1}:${TARGET_TAG} ${BASEDIR}"
 docker build -t ${1}:${TARGET_TAG} ${BASEDIR}
 
 echo "Update image on docker HUB"
-docker push ${1}:${TARGET_TAG}
+docker push docker.io/${1}:${TARGET_TAG}
