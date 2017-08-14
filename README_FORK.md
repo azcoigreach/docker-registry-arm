@@ -1,8 +1,7 @@
 ### FORK
 *2017-08-13*  
 * Not working.  Can not get original to build properly. 
-* Changed builds to arm32v6/golang:alpine3.6
-* Rolled down to alpine to 3.6 to make compatible with pi zero.
+* Changed builds to arm32v7/golang:latest
 
              
 ### RUN

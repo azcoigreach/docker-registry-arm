@@ -1,6 +1,6 @@
 # Build a minimal distribution container
 
-FROM arm32v6/alpine:3.5
+FROM arm32v7/alpine:latest
 
 RUN set -ex \
     && apk add --no-cache ca-certificates apache2-utils
