@@ -12,7 +12,6 @@ RUN apt-get update && \
 WORKDIR $DISTRIBUTION_DIR
 COPY . $DISTRIBUTION_DIR
 
-RUN mkdir /etc/docker/registry
 COPY cmd/registry/config-dev.yml /etc/docker/registry/config.yml
 
 RUN make PREFIX=/go clean binaries
