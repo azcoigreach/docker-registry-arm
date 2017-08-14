@@ -1,4 +1,4 @@
-FROM arm32v6/golang:1.7.6-alpine3.5
+FROM arm32v6/golang:alpine3.6
 
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
@@ -19,4 +19,3 @@ VOLUME ["/var/lib/registry"]
 EXPOSE 5000
 ENTRYPOINT ["registry"]
 CMD ["serve", "/etc/docker/registry/config.yml"]
-#CMD ["/bin/ash"]
