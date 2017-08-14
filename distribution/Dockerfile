@@ -1,4 +1,4 @@
-FROM arm32v7/golang:latest
+FROM arm32v7/golang:1.7-wheezy
 
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
