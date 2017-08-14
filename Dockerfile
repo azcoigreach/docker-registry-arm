@@ -3,7 +3,7 @@
 FROM arm32v6/alpine:3.6
 
 RUN set -ex \
-    && apk add --no-cache ca-certificates librados2 apache2-utils
+    && apk add --no-cache ca-certificates apache2-utils
 
 COPY ./registry/registry /bin/registry
 COPY ./registry/config-example.yml /etc/docker/registry/config.yml
