@@ -1,10 +1,9 @@
 # Build a minimal distribution container
 
-FROM resin/rpi-raspbian:jessie
+FROM arm32v6/alpine:3.6
 
-RUN apt-get update && \
-    apt-get install -y ca-certificates librados2 apache2-utils && \
-    rm -rf /var/lib/apt/lists/*
+RUN set -ex \
+    && apk add --no-cache ca-certificates librados2 apache2-utils
 
 COPY ./registry/registry /bin/registry
 COPY ./registry/config-example.yml /etc/docker/registry/config.yml
