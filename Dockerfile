@@ -8,9 +8,9 @@ RUN apt-get update && \
 
 COPY ./registry/registry /bin/registry
 
-RUN mkdir /etc/docker/registry && \
-    chmod 0755 -R /etc/docker/registry && \
-    chmod 0755 -R /var/lib/registry
+RUN /bin/bash -c mkdir /etc/docker/registry && \
+    /bin/bash -c chmod 0755 -R /etc/docker/registry && \
+    /bin/bash -c chmod 0755 -R /var/lib/registry
 
 COPY ./registry/config-example.yml /etc/docker/registry/config.yml
 
