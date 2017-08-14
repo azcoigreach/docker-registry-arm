@@ -14,6 +14,7 @@ RUN mkdir -p /etc/docker/registry && \
 COPY ./registry/config-example.yml /etc/docker/registry/config.yml
 
 VOLUME ["/var/lib/registry"]
+VOLUME ["/etc/docker/registry"]
 EXPOSE 5000
 ENTRYPOINT ["/bin/registry"]
 CMD ["serve", "/etc/docker/registry/config.yml"]
