@@ -18,5 +18,5 @@ RUN make PREFIX=/go clean binaries
 VOLUME ["/var/lib/registry"]
 EXPOSE 5000
 ENTRYPOINT ["registry"]
-#CMD ["serve", "/etc/docker/registry/config.yml"]
-CMD ["/bin/ash"]
+CMD ["serve", "/etc/docker/registry/config.yml"]
+#CMD ["/bin/ash"]
