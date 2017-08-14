@@ -3,7 +3,11 @@ FROM arm32v6/golang:1.7.6-alpine3.5
 ENV DISTRIBUTION_DIR /go/src/github.com/docker/distribution
 ENV DOCKER_BUILDTAGS include_oss include_gcs
 
-RUN apk update && apk add make git
+ARG GOOS=linux
+ARG GOARCH=armhf
+
+RUN set -ex \
+    && apk add --no-cache make git
 
 WORKDIR $DISTRIBUTION_DIR
 COPY . $DISTRIBUTION_DIR
@@ -14,4 +18,5 @@ RUN make PREFIX=/go clean binaries
 VOLUME ["/var/lib/registry"]
 EXPOSE 5000
 ENTRYPOINT ["registry"]
-CMD ["serve", "/etc/docker/registry/config.yml"]
+#CMD ["serve", "/etc/docker/registry/config.yml"]
+CMD ["/bin/sh"]
