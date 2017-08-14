@@ -19,4 +19,4 @@ VOLUME ["/var/lib/registry"]
 EXPOSE 5000
 ENTRYPOINT ["registry"]
 #CMD ["serve", "/etc/docker/registry/config.yml"]
-CMD ["/bin/sh"]
+CMD ["/bin/ash"]
