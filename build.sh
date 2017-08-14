@@ -24,8 +24,8 @@ fi
 
 BASEDIR="$(dirname $0)"
 
-echo "Run update.sh ${2}"
-sh ${BASEDIR}/update.sh $2
+echo "Run update.sh ${1}"
+sh ${BASEDIR}/update.sh $1
 
 if [ $? -ne 0 ]; then
   echo "Build failed"
