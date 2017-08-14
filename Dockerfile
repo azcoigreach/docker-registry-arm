@@ -1,6 +1,6 @@
 # Build a minimal distribution container
 
-FROM arm32v7/debian:latest
+FROM arm32v7/debian:jessie
 
 RUN apt-get update && \
     apt-get install -y ca-certificates apache2-utils && \

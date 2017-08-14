@@ -22,8 +22,8 @@ created.
 ## How it works
 
 This package complie oficial [docker/distribution pacakge](https://github.com/docker/distribution) on Raspberry PI with 
-[scaleway/golang:armhf-latest](https://hub.docker.com/r/scaleway/golang/) docker image and build registry on 
-[resin/rpi-raspbian:jessie](https://hub.docker.com/r/resin/rpi-raspbian/) image.
+[arm32v7/golang:latest](https://hub.docker.com/r/arm32v7/golang/) docker image and build registry on 
+[arm32v7/debian:jessie](https://hub.docker.com/r/arm32v7/debian/) image.
 
 Steps: 
 
@@ -42,7 +42,7 @@ should be same, only FROM directive is different)
 You can use my official build of this package with name [budry/registry-arm](https://hub.docker.com/r/budry/registry-arm/)
 
 ```shell
-$ docker run -d -p 5000:5000 --restart always budry/registry-arm
+$ docker run -d -p 5000:5000 --restart always -v /home/pi/registry-data/etc:/etc -v /home/pi/registry-data/var:/var azcoigreach/docker-registry-arm
 ```
 
 I trying update build of this package as soon as possible for each docker registry update, but when you need more actual
@@ -55,7 +55,7 @@ Or you can use custom build on your ARM (Raspberry PI) device.
 **IMPORTANT NOTE: Build must be only on ARM device. On x86/x64 CPU not work!**
 
 ```shell
-$ git clone git@github.com:Budry/docker-registry-arm.git
+$ git clone git@github.com:azcoigreach/docker-registry-arm.git
 $ cd docker-registry-arm
 $ sh build.sh my/registry
 $ docker run -d -p 5000:5000 --restart always my/registry
@@ -64,7 +64,7 @@ $ docker run -d -p 5000:5000 --restart always my/registry
 or 
 
 ```shell
-$ git clone git@github.com:Budry/docker-registry-arm.git
+$ git clone git@github.com:azcoigreach/docker-registry-arm.git
 $ cd docker-registry-arm
 $ sh update.sh master
 $ docker build -t my/registry .
@@ -76,4 +76,4 @@ be actual
 
 ## Compatibility
 
-This package and docker image if tested od Raspberry PI 2 and Raspberry PI 3  
+This package and docker image is tested on a Raspberry PI 2 and Raspberry PI 3.

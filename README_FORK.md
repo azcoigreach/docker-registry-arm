@@ -1,7 +1,7 @@
 ### FORK
 *2017-08-13*  
 * Not working.  Can not get original to build properly. 
-* Changed builds to arm32v7/golang:latest
+* Changed builds to arm32v7/debian:jessie and arm32v7/golang:latest 
 
              
 ### RUN
