@@ -7,7 +7,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY ./registry/registry /bin/registry
-COPY ./registry/config-example.yml /etc/docker/registry/config.yml
+#COPY ./registry/config-example.yml /etc/docker/registry/config.yml
 
 VOLUME ["/var/lib/registry"]
 EXPOSE 5000
